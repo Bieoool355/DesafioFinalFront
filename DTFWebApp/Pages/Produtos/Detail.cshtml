@@ -1,0 +1,53 @@
+﻿@page
+@model DTFWebApp.Pages.Produtos.DetailModel
+@{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">@Html.DisplayFor(model => Model.Produto.nome)</h1>
+                <img class="mx-auto d-block" src="@Html.DisplayFor(model => Model.Produto.imagem)"
+                     alt="Imagem do @Html.DisplayFor(model => Model.Produto.nome)" />
+            </div>
+            <hr />
+            <div class="col-md-6">
+                <h3>Marca: @Html.DisplayFor(model => Model.Produto.marca)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Categoria: @Html.DisplayFor(model => Model.Produto.categoria)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Tamanho: @Html.DisplayFor(model => Model.Produto.tamanho)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Descrição: @Html.DisplayFor(model => Model.Produto.descricao)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Quantidade: @Html.DisplayFor(model => Model.Produto.quantidade)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Valor: @Html.DisplayFor(model => Model.Produto.valor)</h3>
+            </div>
+            <div class="col-md-6">
+                <h3>Status: @Html.DisplayFor(model => Model.Produto.status)</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-outline-primary" asp-page="/Produtos/Edit" asp-route-id="@Model.Produto.ID">Editar</a>
+            <a class="btn btn-outline-danger" asp-page="/Produtos/Delete" asp-route-id="@Model.Produto.ID">Deletar</a>
+        </div>
