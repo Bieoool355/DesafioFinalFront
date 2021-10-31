@@ -78,17 +78,3 @@ body {
 .textoSidebar:hover {
         color: #ecf0f1;
 }
-
-.btn-warning{
-    background-color: #FFD342;
-    color : #ffffff;
-    font-weight: 500;
-    /* padding: 10px 20px; */
-    border-radius: 10%;
-    font-weight: bold;
-}
-
-.btn-warning:hover{
-  background-color: #F09233;
-
-}

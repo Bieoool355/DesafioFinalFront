@@ -3,13 +3,13 @@
 @{
 }
 
-detalhes = new DetailModel(detalhes)
+
 
 <div class="text-center">
     <h1 class="text-center">
-        Lista de Produtos
-        <a class="btn btn-outline-primary align-content-end" asp-page="/Produtos/Create">Criar</a>
+        Lista de Produtos       
     </h1>
+    <br />
     <section class="d-flex">
 
         <table class="table table-hover">
@@ -32,7 +32,7 @@ detalhes = new DetailModel(detalhes)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.nome)
-                            <a href=DetailModel></a>
+                            <a asp-page="/Produtos/Detail" class="nav-link align-middle px-0"></a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.quantidade)
