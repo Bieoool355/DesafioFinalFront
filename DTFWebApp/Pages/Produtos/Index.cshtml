@@ -3,6 +3,8 @@
 @{
 }
 
+detalhes = new DetailModel(detalhes)
+
 <div class="text-center">
     <h1 class="text-center">
         Lista de Produtos
@@ -10,7 +12,7 @@
     </h1>
     <section class="d-flex">
 
-        <table class="tabela">
+        <table class="table table-hover">
             <thead>
                 <tr>
 
@@ -30,6 +32,7 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.nome)
+                            <a href=DetailModel></a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.quantidade)
@@ -37,15 +40,15 @@
                         <td>
                             @if (data.quantidade > 50)
                             {
-                                <h3>Estoque Confortável</h3>
+                                <p>Estoque Confortável</p>
                             }
                             else if (data.quantidade < 20)
                             {
-                                <h3>Estoque Baixo</h3>
+                                <p>Estoque Baixo</p>
                             }
                             else
                             {
-                                <h3>Reposição Necessária</h3>
+                                <p>Reposição Necessária</p>
                             }
                         </td>
                         <td>
@@ -54,63 +57,6 @@
                     </tr>
                 </tbody>
             }
-        </table>
-
-
-
-
-
-
-
-        <!-- <table border="1">
-         <tr>
-             <td>
-                 <h2>Código do Produto</h2>
-             </td>
-             <td>
-                 <h2>Nome</h2>
-             </td>
-             <td>
-                 <h2>Quantidade</h2>
-             </td>
-             <td>
-                 <h2>Situação do Estoque</h2>
-             </td>
-             <td>
-                 <h2>Status do Produto</h2>
-             </td>
-         </tr>-->
-        @foreach (var data in Model.Produtos)
-        {
-            <tr>
-                <td>
-                    <h3>@Html.DisplayFor(modelItem => data.ID)</h3>
-                </td>
-                <td>
-                    <h3>@Html.DisplayFor(modelItem => data.nome)</h3>
-                </td>
-                <td>
-                    <h3>@Html.DisplayFor(modelItem => data.quantidade)</h3>
-                </td>
-                <td>
-                    @if (data.quantidade > 50)
-                    {
-                        <h3>Estoque Confortável</h3>
-                    }
-                    else if (data.quantidade < 20)
-                    {
-                        <h3>Estoque Baixo</h3>
-                    }
-                    else
-                    {
-                        <h3>Reposição Necessária</h3>
-                    }
-                </td>
-                <td>
-                    <h3>@Html.DisplayFor(modelItem => data.status)</h3>
-                </td>
-            </tr>
-        }
         </table>
     </section>
 </div>
