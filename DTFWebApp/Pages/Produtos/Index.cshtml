@@ -9,55 +9,108 @@
         <a class="btn btn-outline-primary align-content-end" asp-page="/Produtos/Create">Criar</a>
     </h1>
     <section class="d-flex">
-        <table border="1">
-            <tr>
-                <td>
-                    <h2>Código do Produto</h2>
-                </td>
-                <td>
-                    <h2>Nome</h2>
-                </td>
-                <td>
-                    <h2>Quantidade</h2>
-                </td>
-                <td>
-                    <h2>Situação do Estoque</h2>
-                </td>
-                <td>
-                    <h2>Status do Produto</h2>
-                </td>
-            </tr>
+
+        <table class="tabela">
+            <thead>
+                <tr>
+
+                    <th scope="col">Código do Produto</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Situação do Estoque</th>
+                    <th scope="col">Status do Produto</th>
+                </tr>
+            </thead>
             @foreach (var data in Model.Produtos)
             {
-                <tr>
-                    <td>
-                        <h3>@Html.DisplayFor(modelItem => data.ID)</h3>
-                    </td>
-                    <td>
-                        <h3>@Html.DisplayFor(modelItem => data.nome)</h3>
-                    </td>
-                    <td>
-                        <h3>@Html.DisplayFor(modelItem => data.quantidade)</h3>
-                    </td>
-                    <td>
-                        @if (data.quantidade > 50)
-                        {
-                            <h3>Estoque Confortável</h3>
-                        }
-                        else if (data.quantidade < 20)
-                        {
-                            <h3>Estoque Baixo</h3>
-                        }
-                        else
-                        {
-                            <h3>Reposição Necessária</h3>
-                        }
-                    </td>
-                    <td>
-                        <h3>@Html.DisplayFor(modelItem => data.status)</h3>
-                    </td>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.quantidade)
+                        </td>
+                        <td>
+                            @if (data.quantidade > 50)
+                            {
+                                <h3>Estoque Confortável</h3>
+                            }
+                            else if (data.quantidade < 20)
+                            {
+                                <h3>Estoque Baixo</h3>
+                            }
+                            else
+                            {
+                                <h3>Reposição Necessária</h3>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.status)
+                        </td>
                     </tr>
+                </tbody>
             }
+        </table>
+
+
+
+
+
+
+
+        <!-- <table border="1">
+         <tr>
+             <td>
+                 <h2>Código do Produto</h2>
+             </td>
+             <td>
+                 <h2>Nome</h2>
+             </td>
+             <td>
+                 <h2>Quantidade</h2>
+             </td>
+             <td>
+                 <h2>Situação do Estoque</h2>
+             </td>
+             <td>
+                 <h2>Status do Produto</h2>
+             </td>
+         </tr>-->
+        @foreach (var data in Model.Produtos)
+        {
+            <tr>
+                <td>
+                    <h3>@Html.DisplayFor(modelItem => data.ID)</h3>
+                </td>
+                <td>
+                    <h3>@Html.DisplayFor(modelItem => data.nome)</h3>
+                </td>
+                <td>
+                    <h3>@Html.DisplayFor(modelItem => data.quantidade)</h3>
+                </td>
+                <td>
+                    @if (data.quantidade > 50)
+                    {
+                        <h3>Estoque Confortável</h3>
+                    }
+                    else if (data.quantidade < 20)
+                    {
+                        <h3>Estoque Baixo</h3>
+                    }
+                    else
+                    {
+                        <h3>Reposição Necessária</h3>
+                    }
+                </td>
+                <td>
+                    <h3>@Html.DisplayFor(modelItem => data.status)</h3>
+                </td>
+            </tr>
+        }
         </table>
     </section>
 </div>

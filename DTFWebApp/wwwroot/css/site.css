@@ -69,3 +69,26 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.textoSidebar{
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.textoSidebar:hover {
+        color: #ecf0f1;
+}
+
+.btnEntrar{
+    background-color: #FFD342;
+    color : #ffffff;
+    font-weight: 500;
+    /* padding: 10px 20px; */
+    border-radius: 10%;
+    font-weight: bold;
+}
+
+.btnEntrar:hover{
+  background-color: #F09233;
+
+}
