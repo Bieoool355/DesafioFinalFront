@@ -4,67 +4,86 @@
 }
 
 
-<h1 class="text-center">Adicionar Produto</h1>
-<hr />
-<form method="post">
-    <div class="row">
 
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="nome" class="control-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" />
+<div class="card">
+    <div class="card-body">
+        <h2 class="text-left">Cadastrar Produto</h2>
+        <hr />
+        <form method="post">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nome" class="control-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="marca" class="control-label">Marca</label>
+                        <input type="text" class="form-control" id="marca" name="marca" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="categoria" class="control-label">Categoria</label>
+                        <select class="form-control" aria-label="Default select example" id="categoria" name="categoria">
+                            <option selected>Selecione a Categoria</option>
+                            <option value="Esportiva">Esportiva</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Luxo">Luxo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="tamanho" class="control-label">Tamanho</label>
+                        <select class="form-control" id="tamanho" name="tamanho">
+                            <option selected>Selecione o tamanho</option>
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="descricao" class="control-label">Descrição</label>
+                        <input type="text" class="form-control" id="descricao" name="descricao" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="quantidade" class="control-label">Quantidade</label>
+                        <input type="number" class="form-control" min="0" id="quantidade" name="quantidade" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="valor" class="control-label">Valor</label>
+                        <input type="number" min="0" step=".01" class="form-control" id="valor" name="valor" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="imagem" class="control-label">Imagem</label>
+                        <input type="text" class="form-control" id="imagem" name="imagem" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="status" class="control-label">Status</label>
+                        <select class="form-control" id="status" name="status">
+                            <option selected>Selecione o Status</option>
+                            <option value=true>Ativo</option>
+                            <option value=false>Inativo</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
             <div class="form-group">
-                <label for="marca" class="control-label">Marca</label>
-                <input type="text" class="form-control" id="marca" name="marca" />
+                <input type="submit" value="CADASTRAR PRODUTO" class="btn btn-warning" />
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="categoria" class="control-label">Categoria</label>
-                <input type="text" class="form-control" id="categoria" name="categoria" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="tamanho" class="control-label">Tamanho</label>
-                <input type="text" class="form-control" id="tamanho" name="tamanho" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="descricao" class="control-label">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="quantidade" class="control-label">Quantidade</label>
-                <input type="number" class="form-control" id="quantidade" name="quantidade" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="valor" class="control-label">Valor</label>
-                <input type="text" class="form-control" id="valor" name="valor" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="imagem" class="control-label">Imagem</label>
-                <input type="text" class="form-control" id="imagem" name="imagem" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="status" class="control-label">Status</label>
-                <input type="text" class="form-control" id="status" name="status" />
-            </div>
-        </div>
+        </form>
     </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
-    </div>
-</form>
+</div>
