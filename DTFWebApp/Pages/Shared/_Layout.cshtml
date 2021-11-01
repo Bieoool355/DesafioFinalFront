@@ -25,35 +25,31 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
                             <a asp-page="/Produtos/Index" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline" style="color:white; font-size:30px ">Home</span>
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline font-weight-bold textoSidebar">Início</span>
                             </a>
                         </li>
-                        <li>
-                            <a asp-page="/Produtos/Detail?id=1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="color: white; font-size: 30px ">Detalhe</span>
-                            </a>
-                        </li>
+
                         <li>
                             <a asp-page="/Produtos/Create" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color: white; font-size: 30px ">Cadastrar</span>
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline font-weight-bold textoSidebar">Cadastrar</span>
                             </a>
                         </li>
                     </ul>
                     <hr>
                 </div>
             </div>
-            <div class="col py-3">
-                <div class="container">
-                    <main role="main" class="pb-3">
-                        @RenderBody()
-                    </main>
+                <div class="col py-3">
+                    <div class="container">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - DTFWebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="d-flex justify-content-center">
+            &copy; 2021 - Combee - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
