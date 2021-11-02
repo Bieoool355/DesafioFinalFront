@@ -14,6 +14,7 @@ namespace DTFWebApp.Pages.Produtos
 {
     public class DetailModel : PageModel
     {
+        [BindProperty]
         public Produto Produto { get; set; }
         string baseUrl = "https://localhost:44392/";
 
@@ -39,6 +40,29 @@ namespace DTFWebApp.Pages.Produtos
                 }
             }
             return Page();
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {           
+
+            using (var client = new HttpClient())
+            {
+               
+                Produto.status = false;
+
+                client.BaseAddress = new Uri(baseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/Produtos/" + Produto.ID, Produto);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToPage("./Index");
+                }
+                else
+                {
+                    return Page();
+                }
+            }
         }
 
     }

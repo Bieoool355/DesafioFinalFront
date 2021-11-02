@@ -29,21 +29,20 @@
                         <img class="d-flex justify-content-center mb-3" src="https://i.ibb.co/cyPFdYS/combee.png"
                              width="50%" alt="">
                     </div>
-                    <div class="form-group">
-                        <label for="usuario">Usuário</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu Usuário" />
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua Senha" />
-                    </div>
-                    <div class=" d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-warning">Entrar</button>
-                        <a asp-page="/Produtos/Index" class="nav-link align-middle px-0"></a>
-                     </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="usuario">Usuário</label>
+                            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu Usuário" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua Senha" required />
+                        </div>
 
-
-
+                        <div class=" d-flex justify-content-center">
+                            <button type="submit" asp-page="/Produtos/Index" class="btn btn-outline-warning btn-lg">Entrar</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="col-md-6">
@@ -54,5 +53,9 @@
             </div>
         </div>
     </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
+
 </body>
 </html>

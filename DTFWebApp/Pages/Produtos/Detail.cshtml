@@ -4,52 +4,67 @@
 }
 
 
-<form method="get">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="nome" class="control-label">Código do Produto</label>
-                <input type="text" class="form-control" id="ID" name="ID" placeholder="Informe o Código do Produto desejado" />
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Buscar" class="btn btn-primary" />
-    </div>
-</form>
+<div class="card">
+    <div class="card-body">
 
-
+        <h1 class="text-left">Detalhes do Produto</h1>
+        <hr />
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">@Html.DisplayFor(model => Model.Produto.nome)</h1>
+            <div class="col-md-6">
                 <img class="mx-auto d-block" src="@Html.DisplayFor(model => Model.Produto.imagem)"
                      alt="Imagem do @Html.DisplayFor(model => Model.Produto.nome)" />
             </div>
-            <hr />
-            <div class="col-md-6">
-                <p>Marca: @Html.DisplayFor(model => Model.Produto.marca)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Categoria: @Html.DisplayFor(model => Model.Produto.categoria)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Tamanho: @Html.DisplayFor(model => Model.Produto.tamanho)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Descrição: @Html.DisplayFor(model => Model.Produto.descricao)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Quantidade: @Html.DisplayFor(model => Model.Produto.quantidade)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Valor: @Html.DisplayFor(model => Model.Produto.valor)</p>
-            </div>
-            <div class="col-md-6">
-                <p>Status: @Html.DisplayFor(model => Model.Produto.status)</p>
-            </div>
-        </div>
 
+            <div class="col-md-6">
+
+                <p><strong>Código do produto:</strong> @Html.DisplayFor(model => Model.Produto.ID)</p>
+
+                <p>
+                    <strong>Status do produto: </strong>
+                    @if (Model.Produto.status == true)
+                    {
+                    <label>Ativo</label>
+                    }
+                    else
+                    {
+                        <label>Inativo</label>
+                    }
+                    </p>
+
+                    <p><strong>Nome:</strong> @Html.DisplayFor(model => Model.Produto.nome)</p>
+
+                    <p><strong>Categoria:</strong> @Html.DisplayFor(model => Model.Produto.categoria)</p>
+
+                    <p><strong>Tamanho:</strong> @Html.DisplayFor(model => Model.Produto.tamanho)</p>
+
+                    <p><strong>Descrição:</strong> @Html.DisplayFor(model => Model.Produto.descricao)</p>
+
+                    <p><strong>Quantidade em estoque:</strong> @Html.DisplayFor(model => Model.Produto.quantidade)</p>
+
+                    <p><strong>Valor de entrada:</strong> @Html.DisplayFor(model => Model.Produto.valor)</p>
+
+                </div>
+            </div>
+        <br/>
         <div class="row">
-            <a class="btn btn-outline-primary" asp-page="/Produtos/Edit" asp-route-id="@Model.Produto.ID">Editar</a>
-            <a class="btn btn-outline-danger" asp-page="/Produtos/Delete" asp-route-id="@Model.Produto.ID">Deletar</a>
+            <div class="col-md-6">
+                <a class="btn btn-outline-warning btn-lg btn-block" asp-page="/Produtos/Edit" asp-route-id="@Model.Produto.ID">ALTERAR DETALHES</a>
+            </div>
+            <div class="col-md-6">
+                <form method="post">
+                    <input type="hidden" asp-for="Produto.ID" />
+                    <input type="hidden" asp-for="Produto.nome" />
+                    <input type="hidden" asp-for="Produto.categoria" />
+                    <input type="hidden" asp-for="Produto.marca" />
+                    <input type="hidden" asp-for="Produto.tamanho" />
+                    <input type="hidden" asp-for="Produto.quantidade" />
+                    <input type="hidden" asp-for="Produto.descricao" />
+                    <input type="hidden" asp-for="Produto.valor" />
+                    <input type="hidden" asp-for="Produto.imagem" />
+                    <input type="hidden" asp-for="Produto.status" />
+
+                    <input type="submit" value="INATIVAR PRODUTO" class="btn btn-outline-warning btn-lg btn-block" />
+                </form>                
+            </div>
         </div>
+    </div>

@@ -3,11 +3,9 @@
 @{
 }
 
-
-
 <div class="text-center">
     <h1 class="text-center">
-        Lista de Produtos       
+        Lista de Produtos
     </h1>
     <br />
     <section class="d-flex">
@@ -21,6 +19,7 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Situação do Estoque</th>
                     <th scope="col">Status do Produto</th>
+                    <th scope="col">Detalhe produto</th>
                 </tr>
             </thead>
             @foreach (var data in Model.Produtos)
@@ -32,7 +31,6 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.nome)
-                            <a asp-page="/Produtos/Detail" class="nav-link align-middle px-0"></a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => data.quantidade)
@@ -52,7 +50,18 @@
                             }
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => data.status)
+                            @if (data.status)
+                            {                               
+                                <img src="https://i.imgur.com/2u9qkbW.png" title="Ativo" />
+                            }
+                            else
+                            {                                
+                                <img src="https://i.imgur.com/l9v5IIj.png" title="Inativo" />
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-warning btn-lg" asp-page="/Produtos/Detail" asp-route-id="@data.ID">Detalhes</a>
+
                         </td>
                     </tr>
                 </tbody>
