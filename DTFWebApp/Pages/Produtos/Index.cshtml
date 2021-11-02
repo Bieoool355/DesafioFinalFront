@@ -3,69 +3,69 @@
 @{
 }
 
-<div class="text-center">
-    <h1 class="text-center">
-        Lista de Produtos
-    </h1>
-    <br />
-    <section class="d-flex">
+<div class="card">
+    <div class="card-body">
+        <h2 class="text-left">Lista de Produtos</h2>
+        <br />
 
-        <table class="table table-hover">
-            <thead>
-                <tr>
-
-                    <th scope="col">Código do Produto</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Situação do Estoque</th>
-                    <th scope="col">Status do Produto</th>
-                    <th scope="col">Detalhe produto</th>
-                </tr>
-            </thead>
-            @foreach (var data in Model.Produtos)
-            {
-                <tbody>
+        <section class="d-flex">
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => data.ID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => data.nome)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => data.quantidade)
-                        </td>
-                        <td>
-                            @if (data.quantidade > 50)
-                            {
-                                <p>Estoque Confortável</p>
-                            }
-                            else if (data.quantidade < 20)
-                            {
-                                <p>Estoque Baixo</p>
-                            }
-                            else
-                            {
-                                <p>Reposição Necessária</p>
-                            }
-                        </td>
-                        <td>
-                            @if (data.status)
-                            {                               
-                                <img src="https://i.imgur.com/2u9qkbW.png" title="Ativo" />
-                            }
-                            else
-                            {                                
-                                <img src="https://i.imgur.com/l9v5IIj.png" title="Inativo" />
-                            }
-                        </td>
-                        <td>
-                            <a class="btn btn-outline-warning btn-lg" asp-page="/Produtos/Detail" asp-route-id="@data.ID">Detalhes</a>
 
-                        </td>
+                        <th scope="col">Código do Produto</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Situação do Estoque</th>
+                        <th scope="col">Status do Produto</th>
+                        <th scope="col">Detalhe produto</th>
                     </tr>
-                </tbody>
-            }
-        </table>
-    </section>
+                </thead>
+                @foreach (var data in Model.Produtos)
+                {
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => data.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => data.nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => data.quantidade)
+                            </td>
+                            <td>
+                                @if (data.quantidade > 50)
+                                {
+                                    <p>Estoque Confortável</p>
+                                }
+                                else if (data.quantidade < 20)
+                                {
+                                    <p>Estoque Baixo</p>
+                                }
+                                else
+                                {
+                                    <p>Reposição Necessária</p>
+                                }
+                            </td>
+                            <td>
+                                @if (data.status)
+                                {
+                                    <img src="https://i.imgur.com/2u9qkbW.png" title="Ativo" />
+                                }
+                                else
+                                {
+                                    <img src="https://i.imgur.com/l9v5IIj.png" title="Inativo" />
+                                }
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-warning btn-lg" asp-page="/Produtos/Detail" asp-route-id="@data.ID">Detalhes</a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </section>
+    </div>
 </div>
