@@ -27,13 +27,77 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Produto.categoria" class="control-label">Categoria</label>
-                        <input asp-for="Produto.categoria" class="form-control" />
+
+                        <select class="form-control" id="categoria" name="Produto.categoria">
+
+                            @if (Model.Produto.categoria == "Casual")
+                            {
+                                <option value="Casual" selected>Casual</option>
+                                <option value="Esportivo">Esportivo</option>
+                                <option value="Luxo">Luxo</option>
+                            }
+                            else if (Model.Produto.categoria == "Esportivo")
+                            {
+                                <option value="Casual">Casual</option>
+                                <option value="Esportivo" selected>Esportivo</option>
+                                <option value="Luxo">Luxo</option>
+                            }
+                            else
+                            {
+                                <option value="Casual">Casual</option>
+                                <option value="Esportivo">Esportivo</option>
+                                <option value="Luxo" selected>Luxo</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Produto.tamanho" class="control-label">Tamanho</label>
-                        <input asp-for="Produto.tamanho" class="form-control" />
+
+                        <select class="form-control" id="tamanho" name="Produto.tamanho">
+
+                            @if (Model.Produto.tamanho == "PP")
+                            {
+                                <option value="PP" selected>PP</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                            }
+                            else if (Model.Produto.tamanho == "P")
+                            {
+                                <option value="PP">PP</option>
+                                <option value="P" selected>P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                            }
+                            else if (Model.Produto.tamanho == "M")
+                            {
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M" selected>M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                            }
+                            else if (Model.Produto.tamanho == "G")
+                            {
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G" selected>G</option>
+                                <option value="GG">GG</option>
+                            }
+                            else
+                            {
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG" selected>GG</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -63,7 +127,19 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Produto.status" class="control-label">Status</label>
-                        <input asp-for="Produto.status" class="form-control" />
+                        <select class="form-control" id="status" name="Produto.status">
+
+                            @if (Model.Produto.status == true)
+                            {
+                                <option selected value=true>Ativo</option>
+                                <option value=false>Inativo</option>
+                            }
+                            else
+                            {
+                                <option value=true>Ativo</option>
+                                <option selected value=false>Inativo</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>
